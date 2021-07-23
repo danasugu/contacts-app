@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+// use Carbon\Carbon;
+use Illuminate\Support\Carbon;
+use App\Models\Category;
+use Auth;
+
 
 class CategoryController extends Controller
 {
@@ -34,6 +38,9 @@ class CategoryController extends Controller
 
         //Eloquent
 
-        
+            $category = new Category;
+            $category->category_name= $request->category_name;
+            $category->user_id = Auth::user()->id;
+            $category->save();
     }
 }
