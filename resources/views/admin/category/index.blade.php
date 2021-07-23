@@ -11,6 +11,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
+
+                    @if(session)
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
                     <div class="card-header">
                         All categories
                     </div>
