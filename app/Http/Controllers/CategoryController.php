@@ -30,6 +30,7 @@ class CategoryController extends Controller
             ]
         );
 
+        //DB
         // Category::insert([
         //     'category_name' => $request->category_name,
         //     'user_id' => Auth::user()->id,
@@ -38,9 +39,9 @@ class CategoryController extends Controller
 
         //Eloquent
 
-            // $category = new Category;
-            // $category->category_name= $request->category_name;
-            // $category->user_id = Auth::user()->id;
-            // $category->save();
+            $category = new Category;
+            $category->category_name= $request->category_name;
+            $category->user_id = Auth::user()->id;
+            $category->save();
     }
 }
