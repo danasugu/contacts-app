@@ -26,19 +26,21 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Nr</th>
-                                    <th scope="col">Nume</th>
-                                    <th scope="col">Email</th>
+                                    <th scope="col">Categorie</th>
+                                    <th scope="col">User</th>
                                     <th scope="col">Data</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @php($i=1)
+                                @foreach($categories as $category)
                                     <tr>
                                         <th scope="row">{{ $i++ }}</th>
-                                        <td> </td>
-                                        <td> </td>
-                                        <td> </td>
+                                        <td> {{ $category->category_name }} </td>
+                                        <td> {{ $category->user_id }} </td>
+                                        <td> {{ $category->created_at }} </td>
                                     </tr>
+                                @endforeach    
                             </tbody>
                         </table>
                     </div>
