@@ -77,7 +77,22 @@
                                 <button type="submit" class="btn btn-primary">Add Category</button>
                             </form>
                         </div>
-
+                    </div>
+                    <div class="card">
+                        <div class="card-header">Search</div>
+                        <div class="card-body">
+                           <form action="/search" method="POST" role="search">
+                                {{ csrf_field() }}
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="q"
+                                        placeholder="Search users"> <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
