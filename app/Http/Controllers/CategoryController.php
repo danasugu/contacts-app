@@ -51,7 +51,7 @@ class CategoryController extends Controller
             $data = array();
             $data['category_name'] = $request->category_name;
             $data['user_id'] = Auth::user()->id;
-            DB::table('categories')->($data);
+            DB::table('categories')->insert($data);
 
             return Redirect()->back()->with('success', 'Category inserted succesfully');
     }
