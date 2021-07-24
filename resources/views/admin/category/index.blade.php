@@ -55,8 +55,6 @@
                         </table>
                         {{ $categories->links() }}
                     </div>
-
-
                 </div>
                 <div class="col-md-4">
                     <div class="card">
@@ -81,17 +79,31 @@
                     <div class="card">
                         <div class="card-header">Search</div>
                         <div class="card-body">
-                           <form action="/search" method="POST" role="search">
+                           {{-- <form action="/search" method="POST" role="search">
                                 {{ csrf_field() }}
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="q"
-                                        placeholder="Search users"> <span class="input-group-btn">
+                                        placeholder="Search category"> <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">
                                             <span class="glyphicon glyphicon-search"></span>
                                         </button>
                                     </span>
                                 </div>
-                            </form>
+                            </form> --}}
+
+                             <!-- Search Widget -->
+    <div class="my-4 card">
+        <h5 class="card-header">Search</h5>
+        <form class="card-body" action="/search" method="GET" role="search">
+            {{ csrf_field() }}
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." name="q">
+                <span class="input-group-btn">
+            <button class="btn btn-secondary" type="submit">Go!</button>
+          </span>
+            </div>
+        </form>
+    </div>
                         </div>
                     </div>
                 </div>

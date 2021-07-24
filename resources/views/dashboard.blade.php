@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Dashboard') }}
             <br>
             Hi, <b>{{ Auth::user()->name }}</b>!
-            <div class="text-center text-green-500 p-4 "><b>Total users: {{ count($users) }}</b></div>
+            <div class="p-4 text-center text-green-500 "><b>Total users: {{ count($users) }}</b></div>
         </h2>
     </x-slot>
 
@@ -37,6 +37,22 @@
   </tbody>
 </table>
         </div>
+                <div class="row">
+                     <!-- Search Widget -->
+    <div class="my-4 card">
+        <h5 class="card-header">Search</h5>
+        <form class="card-body" action="/search" method="GET" role="search">
+            {{ csrf_field() }}
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." name="q">
+                <span class="input-group-btn">
+            <button class="btn btn-secondary" type="submit">Go!</button>
+          </span>
+            </div>
+        </form>
+    </div>
+                  </div>
+        
     </div>
     </div>
 </x-app-layout>
