@@ -17,7 +17,7 @@ class CategoryController extends Controller
         // $categories = Category::all(); //get all data
         // $categories = Category::latest()->get(); //order DESC
         //using Query builder
-        $categories = DB::table('categories')->latest()->get();
+        $categories = DB::table('categories')->latest()->paginate(5);
         return view('admin.category.index',compact('categories') ); //pass all data in index page with compact
     }
 
