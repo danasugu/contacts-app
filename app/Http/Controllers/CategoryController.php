@@ -31,11 +31,11 @@ class CategoryController extends Controller
         );
 
         //DB
-        Category::insert([
-            'category_name' => $request->category_name,
-            'user_id' => Auth::user()->id,
-            'created_at' => Carbon::now()
-        ]);
+        // Category::insert([
+        //     'category_name' => $request->category_name,
+        //     'user_id' => Auth::user()->id,
+        //     'created_at' => Carbon::now()
+        // ]);
 
         //Eloquent
 
@@ -43,6 +43,11 @@ class CategoryController extends Controller
             // $category->category_name= $request->category_name;
             // $category->user_id = Auth::user()->id;
             // $category->save();
+
+
+
+            //Query Builder
+            
 
             return Redirect()->back()->with('success', 'Category inserted succesfully');
     }
