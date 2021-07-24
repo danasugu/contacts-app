@@ -32,10 +32,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php($i=1)
+                                {{-- @php($i=1) --}}
                                 @foreach($categories as $category)
                                     <tr>
-                                        <th scope="row">{{ $i++ }}</th>
+                                        <th scope="row">{{ $categories->firstItem()+$loop->index}}</th>
                                         <td> {{ $category->category_name }} </td>
                                         <td> {{ $category->user_id }} </td>
                                         
@@ -45,7 +45,8 @@
                                             <span class="text-danger">No data available</span>
                                                 @else
                                              {{-- {{ $category->created_at->diffForHumans()}}   // for Eloquent --}}
-                                            {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }}  // for query builder
+                                             {{-- // for query builder --}}
+                                            {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }}  
                                             @endif
                                         </td>
                                     </tr>
