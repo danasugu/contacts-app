@@ -38,7 +38,7 @@
                                         <th scope="row">{{ $i++ }}</th>
                                         <td> {{ $category->category_name }} </td>
                                         <td> {{ $category->user_id }} </td>
-                                        <td> {{ $category->created_at }} </td>
+                                        <td> {{ $category->created_at->diffForHumans() }} </td>
                                     </tr>
                                 @endforeach    
                             </tbody>
