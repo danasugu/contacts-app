@@ -40,7 +40,7 @@
                                         <td> {{ $category->user_id }} </td>
                                         
                                         <td>
-                                            @if($category->created_at == NULL)
+                                            @if($category->created_at == NULL) //solved error if NULL column
                                             <span class="text-danger">No data available</span>
                                                 @else
                                             {{ $category->created_at->diffForHumans() }} 
