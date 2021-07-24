@@ -44,7 +44,8 @@
                                             @if($category->created_at == NULL) 
                                             <span class="text-danger">No data available</span>
                                                 @else
-                                            {{ $category->created_at->diffForHumans() }} 
+                                             {{-- {{ $category->created_at->diffForHumans()}}   // for Eloquent --}}
+                                            {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }}  // for query builder
                                             @endif
                                         </td>
                                     </tr>
