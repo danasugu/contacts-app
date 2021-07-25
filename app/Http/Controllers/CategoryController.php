@@ -24,11 +24,11 @@ class CategoryController extends Controller
         $categories = Category::latest()->paginate(5); //order DESC
         }
         
-        $data = compact('categories', 'search');
-        return view('admin.category.index')->with($data);
+        // $data = compact('categories', 'search');
+        // return view('admin.category.index')->with($data);
         //using Query builder
         // $categories = DB::table('categories')->latest()->paginate(5);
-        // return view('admin.category.index',compact('categories') ); //pass all data in index page with compact
+        return view('admin.category.index',compact('categories', 'search') ); //pass all data in index page with compact
     }
 
     public function AddCat(Request $request)
