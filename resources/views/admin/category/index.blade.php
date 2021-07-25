@@ -14,7 +14,7 @@
 
                     <form action="" method="GET">
                         <div class="form-group">
-                            <input type="search" name="search" id="" class="form-control" placeholder="search by name or email" value="{{ $search }}">
+                            <input type="search" name="search" id="" class="form-control" placeholder="search by name" value="{{ $search }}">
                             <button class="btn btn-primary" type="submit">Go!</button>
                         </div>
                     </form>
