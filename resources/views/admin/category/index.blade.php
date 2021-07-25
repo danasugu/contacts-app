@@ -12,6 +12,13 @@
             <div class="row">
                 <div class="col-md-8">
 
+                    <form action="" method="get">
+                        <div class="form-group">
+                            <input type="search" name="" id="" class="form-control" placeholder="search by name or email">
+                             <button class="btn btn-primary" type="submit">Go!</button>
+                        </div>
+                    </form>
+                    
                     @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <strong>{{ session('success') }}!</strong>
