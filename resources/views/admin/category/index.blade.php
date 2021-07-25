@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-8">
 
-                    <form action="" method="get">
+                    <form action="" method="GET">
                         <div class="form-group">
                             <input type="search" name="search" id="" class="form-control" placeholder="search by name or email" value="{{ $search }}">
                             <button class="btn btn-primary" type="submit">Go!</button>

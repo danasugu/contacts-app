@@ -20,7 +20,7 @@ class CategoryController extends Controller
             //where clause
             $categories = Category::where('category_name', '=', $search)->get();
         } else {
-             // $categories = Category::all(); //get all data
+            //  $categories = Category::all(); //get all data
         $categories = Category::latest()->paginate(5); //order DESC
         }
         
