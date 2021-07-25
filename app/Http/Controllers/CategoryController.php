@@ -17,8 +17,9 @@ class CategoryController extends Controller
         //search
         $search = $request['search'] ?? "";
         if ($search != "") {
-
-        }else {
+            //where clause
+            $categories = Category::where('category_name', '=', $search)->get();
+        } else {
              // $categories = Category::all(); //get all data
         $categories = Category::latest()->paginate(5); //order DESC
         }
