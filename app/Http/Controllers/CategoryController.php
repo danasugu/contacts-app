@@ -18,17 +18,17 @@ class CategoryController extends Controller
         $search = $request['search'] ?? "";
         if ($search != "") {
             //where clause
-            $categories = Category::where('category_name', '=', $search)->get();
+            $categories = Category::where('category_name', 'LIKE', "%$search%")->get();
         } else {
             //  $categories = Category::all(); //get all data
-        $categories = Category::latest()->paginate(5); //order DESC
+            $categories = Category::latest()->paginate(5); //order DESC
         }
         
         // $data = compact('categories', 'search');
         // return view('admin.category.index')->with($data);
         //using Query builder
         // $categories = DB::table('categories')->latest()->paginate(5);
-        return view('admin.category.index',compact('categories', 'search') ); //pass all data in index page with compact
+            return view('admin.category.index', compact('categories', 'search') ); //pass all data in index page with compact
     }
 
     public function AddCat(Request $request)
