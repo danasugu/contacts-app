@@ -12,8 +12,10 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-    public function AllCat()
+    public function AllCat(Request $request)
     {
+        //search
+        $search = $request['search'] ?? "";
         // $categories = Category::all(); //get all data
         $categories = Category::latest()->paginate(5); //order DESC
         //using Query builder

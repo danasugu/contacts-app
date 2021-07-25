@@ -15,7 +15,7 @@
                     <form action="" method="get">
                         <div class="form-group">
                             <input type="search" name="search" id="" class="form-control" placeholder="search by name or email">
-                             <button class="btn btn-primary" type="submit">Go!</button>
+                            <button class="btn btn-primary" type="submit">Go!</button>
                         </div>
                     </form>
                     
